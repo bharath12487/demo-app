@@ -1,6 +1,9 @@
 class Question < ApplicationRecord
     require 'csv'
 
+    belongs_to :role
+    belongs_to :mapping
+
     def self.import(file)
         csvdata = CSV.foreach(file.path, headers: true)
         mappings = csvdata.pluck("Mapping").uniq
