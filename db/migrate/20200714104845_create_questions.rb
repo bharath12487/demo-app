@@ -13,6 +13,5 @@ class CreateQuestions < ActiveRecord::Migration[5.2]
       t.references :mapping, foreign_key: true, null: false, index: true
       t.timestamps
     end
-    add_index :questions, [:question], unique: true
   end
 end
